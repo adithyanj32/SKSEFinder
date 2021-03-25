@@ -13,6 +13,75 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/> <!--Row for Skyrim game info-->
+            <RowDefinition Height="auto"/> <!--Row for SKSE info-->
+            <RowDefinition Height="auto"/> <!--Row for the LOG and Install Instructions-->
+        </Grid.RowDefinitions>
 
-    </Grid>
+        <!--#region SubGrid for SKYRIM info-->
+        <!--00 and 01 of WindowGrid-->
+        <Image x:Name="skyrim_image" Grid.Row="0" Grid.Column="0" 
+               Source="./res/slack.png" 
+               Width="100" Margin="10"/>
+
+        <Grid x:Name="SkyrimInfo" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Installed Game:</Label>
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Margin="2" Padding="2" 
+                     VerticalAlignment="Center">Skyrim Special Edition</TextBox>
+
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Game version:</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Margin="2" Padding="2" 
+                     VerticalAlignment="Center">1.5.97.0</TextBox>
+        </Grid>
+        <!--#endregion SkyrimInfo-->
+
+        <!--#region SubGrid for SKSE info-->
+        <!--10 and 11 of WindowGrid-->
+        <Image Grid.Row="1" Grid.Column="0" x:Name="skse_image"
+               Source="./res/coin.png" Width="100" Margin="10"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="SKSEInfo" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Install Status:</Label>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Padding="2" VerticalAlignment="Center">Skyrim Special Edition</TextBox>
+
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">SKSE version:</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="2" Padding="2" VerticalAlignment="Center">2.3.09</TextBox>
+        </Grid>
+        <!--#endregion SKSEInfo-->
+
+        <!--#region Log of Install Instruction-->
+        <!--21 and columnspan2 of WindowGrid-->
+        <TabControl x:Name="log" Grid.Row="2" Grid.ColumnSpan="2" 
+                    Margin="10" Height="200">
+            <TabItem Header="LOG" IsSelected="True">
+                <TextBlock Padding="5" TextWrapping="Wrap" HorizontalAlignment="Stretch">
+                    This is the text thatis going to be displayed in teh log.
+                </TextBlock>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1"/>
+        <!--#endregion Log and Install Instructions-->
+
+    </Grid> <!--Window Grid Panel-->
 </Window>
