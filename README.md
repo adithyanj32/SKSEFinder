@@ -1,5 +1,5 @@
-# SKSEFinder
-SKSEFinder is an simple app written in C# to help Skyrim gamers find the correct version of SKSE for their version of the game.
+# SKSE Finder
+SKSE Finder is an simple app written in C# to help Skyrim gamers find the correct version of SKSE(Skyrim Script Extender) for their version of the game.
 
 This app was commissioned by Alaric from [Alaric's Blog](https://www.youtube.com/alaricsblog "Link to his YouTube channel").
 
